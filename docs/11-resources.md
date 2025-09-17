@@ -10,16 +10,6 @@
 * [GitHub repository of resources by Dan 'Pan'](https://github.com/Pantong51/GASContent)
 * [YouTube Videos by SabreDartStudios](https://www.youtube.com/channel/UCCFUhQ6xQyjXDZ_d6X_H_-A)
 
-* [官方文档](https://docs.unrealengine.com/en-US/Gameplay/GameplayAbilitySystem/index.html)
-* 源代码！
-   * 特别是`GameplayPrediction.h`
-* [Epic的Lyra示例项目](https://unrealengine.com/marketplace/en-US/learn/lyra)
-* [Epic的动作RPG示例项目](https://www.unrealengine.com/marketplace/en-US/product/action-rpg)
-* [Unreal Slackers Discord](https://unrealslackers.org/)有一个专门用于GAS的文本频道`#gameplay-ability-system`
-   * 查看置顶消息
-* [Dan 'Pan'的资源GitHub仓库](https://github.com/Pantong51/GASContent)
-* [SabreDartStudios的YouTube视频](https://www.youtube.com/channel/UCCFUhQ6xQyjXDZ_d6X_H_-A)
-
 ## 11.1 Q&A With Epic Game's Dave Ratti （与Epic Games的Dave Ratti的问答）
 
 ### 11.1.1 Community Questions 1 （社区问题1）
@@ -28,9 +18,7 @@
 
 [Dave Ratti对Unreal Slackers Discord服务器关于GAS的社区问题的回答](https://epicgames.ent.box.com/s/m1egifkxv3he3u3xezb9hzbgroxyhx89)：
 
-1. How can we create scoped prediction windows on demand outside or irrespective of `GameplayAbilities`? For example, how can a fire and forget projectile locally predict a damage `GameplayEffect` when it hits an enemy?
-
-1. 我们如何在不依赖`游戏能力`的情况下按需创建作用域预测窗口？例如，一个发射后不管的弹道如何在击中敌人时本地预测伤害`游戏效果`？
+1. How can we create scoped prediction windows on demand outside or irrespective of `GameplayAbilities`? For example, how can a fire and forget projectile locally predict a damage `GameplayEffect` when it hits an enemy? (我们如何在不依赖`游戏能力`的情况下按需创建作用域预测窗口？例如，一个发射后不管的弹道如何在击中敌人时本地预测伤害`游戏效果`？)
 
 > The PredictionKey system is not really meant to do this. Fundamentally this systems works by a client initiating a predictive action, telling the server about it with a key, and then both client and server running the same thing and associating predictive side effects with the given prediction key. For example, "I am predictively activating an ability" or "I have produced target data and am going to predictively run the part of the ability graph after the WaitTargetData task".
 >
