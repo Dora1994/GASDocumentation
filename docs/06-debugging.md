@@ -1,31 +1,27 @@
-# 6. Debugging GAS
+# 6. Debugging GAS (调试GAS)
 
-## 6. 调试GAS
-
-## 6.1 showdebug abilitysystem
-
-## 6.1 showdebug abilitysystem
+## 6.1 showdebug abilitysystem (显示调试能力系统)
 
 Type `showdebug abilitysystem` in the in-game console. This feature is split into three "pages". All three pages will show the `GameplayTags` that you currently have. Type `AbilitySystem.Debug.NextCategory` into the console to cycle between the pages.
 
-在游戏内控制台中输入`showdebug abilitysystem`。此功能分为三个"页面"。所有三个页面都会显示你当前拥有的`游戏标签`。在控制台中输入`AbilitySystem.Debug.NextCategory`来在页面之间循环。
+在游戏内控制台中输入`showdebug abilitysystem`。此功能分为三个"页面"。所有三个页面都会显示你当前拥有的`GameplayTags`。在控制台中输入`AbilitySystem.Debug.NextCategory`来在页面之间循环。
 
 The first page shows the `CurrentValue` of all of your `Attributes`:
 ![First Page of showdebug abilitysystem](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage1.png)
 
-第一页显示你所有`属性`的`当前值`：
+第一页显示你所有`Attributes`的`CurrentValue`：
 ![showdebug abilitysystem的第一页](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage1.png)
 
 The second page shows all of the `Duration` and `Infinite` `GameplayEffects` on you, their number of stacks, what `GameplayTags` they give, and what `Modifiers` they give.
 ![Second Page of showdebug abilitysystem](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage2.png)
 
-第二页显示你身上所有的`持续`和`无限` `游戏效果`，它们的堆叠数量，它们给予的`游戏标签`，以及它们给予的`修饰符`。
+第二页显示你身上所有的`Duration`和`Infinite` `GameplayEffects`，它们的堆叠数量，它们给予的`GameplayTags`，以及它们给予的`Modifiers`。
 ![showdebug abilitysystem的第二页](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage2.png)
 
 The third page shows all of the `GameplayAbilities` that have been granted to you, whether they are currently running, whether they are blocked from activating, and the status of currently running `AbilityTasks`.
 ![Third Page of showdebug abilitysystem](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage3.png)
 
-第三页显示已授予你的所有`游戏能力`，它们是否正在运行，是否被阻止激活，以及当前运行的`能力任务`的状态。
+第三页显示已授予你的所有`GameplayAbilities`，它们是否正在运行，是否被阻止激活，以及当前运行的`AbilityTasks`的状态。
 ![showdebug abilitysystem的第三页](https://github.com/tranek/GASDocumentation/raw/master/Images/showdebugpage3.png)
 
 To cycle between targets (denoted by a green rectangular prism around the Actor), use the `PageUp` key or `NextDebugTarget` console command to go to the next target and the `PageDown` key or `PreviousDebugTarget` console command to go to the previous target.
@@ -48,9 +44,7 @@ bUseDebugTargetFromHud=true
 
 **注意：**为了让`showdebug abilitysystem`工作，必须在GameMode中选择实际的HUD类。否则找不到命令并返回"Unknown Command"。
 
-## 6.2 Gameplay Debugger
-
-## 6.2 游戏调试器
+## 6.2 Gameplay Debugger (游戏调试器)
 
 GAS adds functionality to the Gameplay Debugger. Access the Gameplay Debugger with the Apostrophe (') key. Enable the Abilities category by pressing 3 on your numpad. The category may be different depending on what plugins you have. If your keyboard doesn't have a numpad like a laptop, then you can change the keybindings in the project settings.
 
@@ -58,13 +52,11 @@ GAS为游戏调试器添加了功能。使用撇号(')键访问游戏调试器�
 
 Use the Gameplay Debugger when you want to see the `GameplayTags`, `GameplayEffects`, and `GameplayAbilities` on **other** `Characters`. Unfortunately it does not show the `CurrentValue` of the target's `Attributes`. It will target whatever `Character` is in the center of your screen. You can change targets by selecting them in the World Outliner in the Editor or by looking at a different `Character` and press Apostrophe (') again. The currently inspected `Character` has the largest red circle above it.
 
-当你想查看**其他**`角色`的`游戏标签`、`游戏效果`和`游戏能力`时使用游戏调试器。不幸的是，它不显示目标`属性`的`当前值`。它会瞄准你屏幕中心的任何`角色`。你可以通过在编辑器的世界大纲中选择它们或通过看向不同的`角色`并再次按撇号(')来更改目标。当前检查的`角色`上方有最大的红色圆圈。
+当你想查看**其他**`角色`的`GameplayTags`、`GameplayEffects`和`GameplayAbilities`时使用游戏调试器。不幸的是，它不显示目标`Attributes`的`CurrentValue`。它会瞄准你屏幕中心的任何`角色`。你可以通过在编辑器的世界大纲中选择它们或通过看向不同的`角色`并再次按撇号(')来更改目标。当前检查的`角色`上方有最大的红色圆圈。
 
 ![Gameplay Debugger](https://github.com/tranek/GASDocumentation/raw/master/Images/gameplaydebugger.png)
 
-## 6.3 GAS Logging
-
-## 6.3 GAS日志记录
+## 6.3 GAS Logging (GAS日志记录)
 
 The GAS source code contains a lot of logging statements produced at varying verbosity levels. You will most likely see these as `ABILITY_LOG()` statements. The default verbosity level is `Display`. Anything higher will not be displayed in the console by default.
 

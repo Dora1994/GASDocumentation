@@ -1,6 +1,4 @@
-# 11. Other Resources
-
-## 11. 其他资源
+# 11. Other Resources （其他资源）
 
 * [Official Documentation](https://docs.unrealengine.com/en-US/Gameplay/GameplayAbilitySystem/index.html)
 * Source Code!
@@ -22,13 +20,9 @@
 * [Dan 'Pan'的资源GitHub仓库](https://github.com/Pantong51/GASContent)
 * [SabreDartStudios的YouTube视频](https://www.youtube.com/channel/UCCFUhQ6xQyjXDZ_d6X_H_-A)
 
-## 11.1 Q&A With Epic Game's Dave Ratti
+## 11.1 Q&A With Epic Game's Dave Ratti （与Epic Games的Dave Ratti的问答）
 
-## 11.1 与Epic Games的Dave Ratti的问答
-
-### 11.1.1 Community Questions 1
-
-### 11.1.1 社区问题1
+### 11.1.1 Community Questions 1 （社区问题1）
 
 [Dave Ratti responses to the Unreal Slackers Discord Server community questions about GAS](https://epicgames.ent.box.com/s/m1egifkxv3he3u3xezb9hzbgroxyhx89):
 

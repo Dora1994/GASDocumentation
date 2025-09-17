@@ -1,8 +1,4 @@
-# 9. Troubleshooting
-
-## 9. 故障排除
-
-## 9.1 `LogAbilitySystem: Warning: Can't activate LocalOnly or LocalPredicted ability %s when not local!`
+# 9. Troubleshooting （故障排除）
 
 ## 9.1 `LogAbilitySystem: Warning: Can't activate LocalOnly or LocalPredicted ability %s when not local!`
 
@@ -12,23 +8,18 @@ You need to [initialize the `ASC` on the client](04-concepts/04-1-ability-system
 
 ## 9.2 `ScriptStructCache` errors
 
-## 9.2 `ScriptStructCache`错误
-
 You need to call [`UAbilitySystemGlobals::InitGlobalData()`](04-concepts/04-9-ability-system-globals.md).
 
 你需要调用[`UAbilitySystemGlobals::InitGlobalData()`](04-concepts/04-9-ability-system-globals.md)。
 
-## 9.3 Animation Montages are not replicating to clients
-
-## 9.3 动画蒙太奇没有复制到客户端
+## 9.3 Animation Montages are not replicating to clients （动画蒙太奇没有复制到客户端）
 
 Make sure that you're using the `PlayMontageAndWait` Blueprint node instead of `PlayMontage` in your [GameplayAbilities](04-concepts/04-6-gameplay-abilities.md). This [AbilityTask](04-concepts/04-7-ability-tasks.md) replicates the montage through the `ASC` automatically whereas the `PlayMontage` node does not.
 
-确保你在[游戏能力](04-concepts/04-6-gameplay-abilities.md)中使用`PlayMontageAndWait`蓝图节点而不是`PlayMontage`。这个[能力任务](04-concepts/04-7-ability-tasks.md)通过`ASC`自动复制蒙太奇，而`PlayMontage`节点不会。
+确保你在[GameplayAbilities](04-concepts/04-6-gameplay-abilities.md)中使用`PlayMontageAndWait`蓝图节点而不是`PlayMontage`。这个[AbilityTask](04-concepts/04-7-ability-tasks.md)通过`ASC`自动复制蒙太奇，而`PlayMontage`节点不会。
 
-## 9.4 Duplicating Blueprint Actors is setting AttributeSets to nullptr
+## 9.4 Duplicating Blueprint Actors is setting AttributeSets to nullptr （复制蓝图Actor将AttributeSets设置为nullptr）
 
-## 9.4 复制蓝图Actor将AttributeSets设置为nullptr
 
 There is a [bug in Unreal Engine](https://issues.unrealengine.com/issue/UE-81109) that will set `AttributeSet` pointers on your classes to nullptr for Blueprint Actor classes that are duplicated from existing Blueprint Actor classes. There are a few workarounds for this. I've had success not creating bespoke `AttributeSet` pointers on my classes (no pointer in the .h, not calling `CreateDefaultSubobject` in the constructor) and instead just directly adding `AttributeSets` to the `ASC` in `PostInitializeComponents()` (not shown in the Sample Project). The replicated `AttributeSets` will still live in the `ASC's` `SpawnedAttributes` array. It would look something like this:
 
